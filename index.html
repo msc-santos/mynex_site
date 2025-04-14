@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mynex - Desenvolvimento Sob Demanda</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f1115;
+      color: #ffffff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 99%;
+      background-color: #10162a;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      z-index: 1000; /* Garante que o header fique acima de outros elementos */
+    }
+
+    .logo-header {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00bfff;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .logo-icon {
+      font-weight: bold;
+      font-size: 70px;
+      color: #007bff; /* azul vibrante */
+      transform: rotate(-5deg);
+    }
+
+    .logo-text {
+      font-size: 32px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: #121826;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #00bfff;
+    }
+
+    .service {
+      background: #1c1f2e;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      background-color: #2c2f3f;
+      color: #fff;
+    }
+
+    .contact-form button {
+      background-color: #00bfff;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #009acd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #10162a;
+      color: #aaa;
+    }
+
+    .social-icons a {
+      color: #00bfff;
+      font-size: 24px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      background: #1c1f2e;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .slide img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background-color: #00bfff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #009acd;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      nav {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-header">
+      <span class="logo-icon" style="font-size: 36px;"><i>M</i></span>
+      <span class="logo-text" style="font-size: 24px;">ynex</span>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Software Sob Demanda com Alta Performance</h1>
+    <p>Desenvolvimento personalizado, arquitetura escalável na AWS e otimização de sistemas Node.js.</p>
+  </div>
+
+  <section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>
+      A Mynex nasceu em 2023, idealizada por um desenvolvedor com mais de 9 anos de experiência, atuando em projetos dos mais diversos segmentos, tanto web quanto mobile.
+      Nossa paixão é transformar desafios complexos em soluções tecnológicas eficientes, com foco em performance, escalabilidade e experiência do usuário.
+      Nossa visão é ser referência em soluções digitais sob demanda com qualidade e inovação.
+    </p>
+  </section>
+
+  <section class="services" id="servicos">
+    <h2>Serviços</h2>
+    <div class="service">
+      <h3>🛠 Desenvolvimento Sob-Demanda</h3>
+      <p>Construímos soluções 100% personalizadas, desde o planejamento até a entrega, com foco em qualidade, escalabilidade e performance.</p>
+    </div>
+
+    <div class="service">
+      <h3>⚙️ Otimização de Sistemas Node.js</h3>
+      <p>Melhoramos aplicações existentes com foco em performance, consumo de memória, arquitetura de serviços e manutenção.</p>
+    </div>
+
+    <div class="service">
+      <h3>☁️ Soluções com Infraestrutura Gerenciada</h3>
+      <p>Hospedamos e mantemos seu sistema em nossa infraestrutura AWS, com assinatura mensal que garante suporte e atualizações contínuas.</p>
+    </div>
+
+    <div class="service">
+      <h3>🌐 Criação e Gerenciamento de Sites Estáticos</h3>
+      <p>Desenvolvemos sites estáticos modernos e responsivos, com hospedagem e disponibilização na web, garantindo alta performance e segurança.</p>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="slider">
+      <div class="slides" id="slides">
+        <div class="slide">
+          <img src="https://via.placeholder.com/800x400" alt="Projeto 1">
+          <h3>Projeto One</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div class="slide">
+          <img src="https://via.placeholder.com/800x400" alt="Projeto 2">
+          <h3>Projeto Two</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+      </div>
+      <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato para tirar dúvidas ou solicitar um orçamento.</p>
+
+    <form class="contact-form" action="mailto:seu-email@exemplo.com" method="POST" enctype="text/plain">
+      <!-- Substitua "seu-email@exemplo.com" acima pelo e-mail que receberá os formulários -->
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="logo-icon"><i>M</i></span>
+      <span class="logo-text">ynex</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+      <div class="social-icons">
+        <!-- <a href="https://instagram.com/seu_usuario" target="_blank" style="cursor: pointer;"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/seu_usuario" target="_blank" style="cursor: pointer;"><i class="fab fa-linkedin"></i></a> -->
+      </div>
+      <p>&copy; 2025 Mynex - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementById("slides");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+      slideIndex = index;
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % dots.length;
+      showSlide(slideIndex);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    setInterval(nextSlide, 5000);
+  </script>
+
+</body>
+</html>
