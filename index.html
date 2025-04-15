@@ -289,8 +289,7 @@
     <h2>Contato</h2>
     <p>Entre em contato para tirar dúvidas ou solicitar um orçamento.</p>
 
-    <form class="contact-form" action="mailto:marcossamuel17@gmail.com" method="POST" enctype="text/plain">
-      <!-- Substitua "seu-email@exemplo.com" acima pelo e-mail que receberá os formulários -->
+    <form id="contactForm" class="contact-form">
       <input type="text" name="nome" placeholder="Seu nome" required />
       <input type="email" name="email" placeholder="Seu e-mail" required />
       <textarea name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
@@ -315,6 +314,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     let slideIndex = 0;
     const slides = document.getElementById("slides");
@@ -338,13 +338,25 @@
 
     setInterval(nextSlide, 15000);
 
+     // Inicializa o EmailJS com seu User ID
+    emailjs.init("DIgJui1d3g1yASFzX"); // Substitua pelo seu User ID
+
     const form = document.getElementById("contactForm");
     const confirmationMessage = document.getElementById("confirmationMessage");
 
     form.addEventListener("submit", function (event) {
       event.preventDefault(); // Impede o envio padrão do formulário
-      confirmationMessage.style.display = "block"; // Exibe a mensagem de confirmação
-      form.reset(); // Limpa os campos do formulário
+
+      // Envia o e-mail usando o EmailJS
+      emailjs.sendForm("service_z8pk8tt", "template_5hl6ioc", form)
+        .then(() => {
+          confirmationMessage.style.display = "block"; // Exibe a mensagem de confirmação
+          form.reset(); // Limpa os campos do formulário
+        })
+        .catch((error) => {
+          console.error("Erro ao enviar o e-mail:", error);
+          alert("Ocorreu um erro ao enviar o e-mail. Tente novamente mais tarde.");
+        });
     });
   </script>
 
