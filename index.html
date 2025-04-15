@@ -293,6 +293,9 @@
       <textarea name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
       <button type="submit">Enviar</button>
     </form>
+    <div id="confirmationMessage" style="display: none; margin-top: 20px; color: #00bfff; font-weight: bold;">
+      Obrigado! Seu e-mail foi enviado com sucesso.
+    </div>
   </section>
 
   <footer style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
@@ -331,6 +334,15 @@
     }
 
     setInterval(nextSlide, 15000);
+
+    const form = document.getElementById("contactForm");
+    const confirmationMessage = document.getElementById("confirmationMessage");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      confirmationMessage.style.display = "block"; // Exibe a mensagem de confirmação
+      form.reset(); // Limpa os campos do formulário
+    });
   </script>
 
 </body>
